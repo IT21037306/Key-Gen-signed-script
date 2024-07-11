@@ -17,7 +17,22 @@ The script performs the following steps:
 ### Running the Script
 
 1. **Make the script executable**:
+
    ```sh
    Move the script to source root directory
    chmod +x generate_all_keys.sh
    ./generate_all_keys.sh
+
+   ```
+
+2. **Add below line to any make file to Signing your Build (LOS Based Rom)**:
+
+   ```sh
+   $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
+   ```
+
+3. **Add below line to any make file to Signing your Build (AOSP Based Rom)**:
+
+   ```sh
+   $(call inherit-product, vendor/extra/product.mk)
+   ```
